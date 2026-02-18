@@ -46,7 +46,7 @@ export default function App() {
 
         {/* Bridge watermark */}
         <div
-          className="animate-reveal pointer-events-none absolute bottom-0 left-1/2 w-full max-w-3xl -translate-x-1/2 opacity-[0.045]"
+          className="animate-reveal pointer-events-none absolute bottom-0 left-1/2 w-full max-w-3xl -translate-x-1/2 opacity-[0.03]"
           style={{
             animationDelay: "0.5s",
             maskImage:
@@ -55,12 +55,7 @@ export default function App() {
               "linear-gradient(to bottom, transparent 0%, black 25%, black 70%, transparent 100%)",
           }}
         >
-          <img
-            src="/bridge.png"
-            alt=""
-            className="w-full"
-            style={{ filter: "blur(1.5px) brightness(1.8) grayscale(1)" }}
-          />
+          <img src="/bridge.png" alt="" className="w-full" />
         </div>
 
         {/* Footer */}
