@@ -9,12 +9,12 @@
   }
 
   body {
-    background-color: #08090a;
+    background-color: #e8e5e0;
   }
 
   ::selection {
-    background-color: rgba(45, 79, 62, 0.4);
-    color: #e7e5e4;
+    background-color: rgba(45, 79, 62, 0.15);
+    color: #1a1a1a;
   }
 }
 

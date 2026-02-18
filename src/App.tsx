@@ -1,49 +1,72 @@
 export default function App() {
   return (
-    <div className="relative flex min-h-svh flex-col items-center justify-center overflow-hidden bg-[#08090a]">
-      {/* Bridge watermark */}
-      <div
-        className="pointer-events-none absolute inset-0 bg-center bg-no-repeat opacity-[0.035]"
-        style={{
-          backgroundImage: "url('/bridge.png')",
-          backgroundSize: "min(85vw, 1000px)",
-          filter: "invert(1)",
-        }}
-      />
+    <div className="min-h-svh bg-[#e8e5e0] p-3 md:p-5">
+      <div className="relative mx-auto flex min-h-[calc(100svh-24px)] max-w-[1440px] flex-col overflow-hidden rounded-[2rem] bg-[#faf9f7] md:min-h-[calc(100svh-40px)]">
+        {/* Header */}
+        <header className="animate-reveal relative z-10 flex items-center justify-between px-8 py-6 md:px-12 md:py-8">
+          <img
+            src="/logo.png"
+            alt="Thornebridge Holdings Co."
+            className="h-10 rounded-lg md:h-12"
+          />
+          <a
+            href="mailto:inquiries@thornebridge.tech"
+            className="rounded-full border border-stone-300 px-5 py-2.5 font-serif text-[11px] tracking-[0.15em] text-stone-500 uppercase transition-all duration-500 hover:border-brand hover:bg-brand hover:text-white"
+          >
+            Contact Us
+          </a>
+        </header>
 
-      {/* Content */}
-      <main className="relative z-10 flex flex-col items-center px-6">
-        <img
-          src="/logo.png"
-          alt="Thornebridge Holdings Co."
-          className="animate-reveal w-32 rounded-2xl shadow-2xl shadow-black/50 md:w-40"
-        />
+        {/* Hero */}
+        <main className="relative z-10 flex flex-1 flex-col justify-center px-8 pb-24 md:px-12">
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
+            <div>
+              <span
+                className="animate-reveal inline-block rounded-full border border-brand/20 bg-brand/5 px-4 py-1.5 font-serif text-[11px] tracking-[0.15em] text-brand uppercase"
+                style={{ animationDelay: "0.2s" }}
+              >
+                Est. 2025
+              </span>
+              <h1
+                className="animate-reveal mt-8 max-w-2xl font-serif text-[clamp(2.5rem,6vw,5rem)] font-light leading-[1.08] tracking-tight text-stone-900"
+                style={{ animationDelay: "0.4s" }}
+              >
+                Engineered
+                <br />
+                for Permanence
+              </h1>
+            </div>
+            <p
+              className="animate-reveal max-w-xs font-serif text-base leading-relaxed text-stone-400 lg:mt-28 lg:text-[17px]"
+              style={{ animationDelay: "0.7s" }}
+            >
+              Bespoke software infrastructure for institutional finance, private
+              capital, and the firms that move markets.
+            </p>
+          </div>
+        </main>
 
+        {/* Bridge watermark */}
         <div
-          className="animate-reveal mt-10 mb-8 h-px w-10 bg-brand/50"
-          style={{ animationDelay: "0.3s" }}
-        />
-
-        <p
-          className="animate-reveal font-serif text-base tracking-[0.2em] font-light text-stone-500 uppercase md:text-lg"
-          style={{ animationDelay: "0.6s" }}
+          className="animate-reveal pointer-events-none absolute bottom-0 left-1/2 w-full max-w-3xl -translate-x-1/2 opacity-[0.045]"
+          style={{
+            animationDelay: "0.5s",
+            maskImage:
+              "linear-gradient(to bottom, transparent 0%, black 25%, black 70%, transparent 100%)",
+            WebkitMaskImage:
+              "linear-gradient(to bottom, transparent 0%, black 25%, black 70%, transparent 100%)",
+          }}
         >
-          Engineered for permanence
-        </p>
-      </main>
+          <img src="/bridge.png" alt="" className="w-full" />
+        </div>
 
-      {/* Contact */}
-      <footer
-        className="animate-reveal absolute bottom-8"
-        style={{ animationDelay: "1.2s" }}
-      >
-        <a
-          href="mailto:inquiries@thornebridge.tech"
-          className="font-serif text-[11px] tracking-[0.3em] text-stone-700 uppercase transition-colors duration-700 hover:text-brand"
-        >
-          Inquiries
-        </a>
-      </footer>
+        {/* Footer */}
+        <footer className="relative z-10 px-8 py-6 md:px-12 md:py-8">
+          <p className="font-serif text-[11px] tracking-[0.1em] text-stone-400">
+            &copy; 2025 Thornebridge Holdings Co.
+          </p>
+        </footer>
+      </div>
     </div>
   );
 }
