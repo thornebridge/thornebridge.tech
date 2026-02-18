@@ -4,7 +4,7 @@ export default function App() {
       <div className="relative mx-auto flex min-h-[calc(100svh-24px)] max-w-[1440px] flex-col overflow-hidden rounded-[2rem] bg-[#faf9f7] md:min-h-[calc(100svh-40px)]">
         {/* Header */}
         <header className="animate-reveal relative z-10 flex items-center justify-between px-8 py-6 md:px-12 md:py-8">
-          <span className="text-lg font-medium tracking-[0.04em] text-stone-800 md:text-xl">
+          <span className="font-serif text-lg font-medium tracking-[0.04em] text-stone-800 md:text-xl">
             Thornebridge
           </span>
           <a
@@ -46,7 +46,7 @@ export default function App() {
 
         {/* Bridge watermark */}
         <div
-          className="animate-reveal pointer-events-none absolute bottom-0 left-1/2 w-full max-w-3xl -translate-x-1/2 opacity-[0.02]"
+          className="animate-reveal pointer-events-none absolute bottom-0 left-1/2 w-full max-w-3xl -translate-x-1/2 opacity-[0.045]"
           style={{
             animationDelay: "0.5s",
             maskImage:
@@ -55,13 +55,18 @@ export default function App() {
               "linear-gradient(to bottom, transparent 0%, black 25%, black 70%, transparent 100%)",
           }}
         >
-          <img src="/bridge.png" alt="" className="w-full" />
+          <img
+            src="/bridge.png"
+            alt=""
+            className="w-full"
+            style={{ filter: "blur(1.5px) brightness(1.8) grayscale(1)" }}
+          />
         </div>
 
         {/* Footer */}
         <footer className="relative z-10 px-8 py-6 md:px-12 md:py-8">
           <p className="font-serif text-[11px] tracking-[0.1em] text-stone-400">
-            &copy; 2025 Thornebridge Holdings Co.
+            &copy; 2025 Thornebridge Holdings LLC.
           </p>
         </footer>
       </div>
