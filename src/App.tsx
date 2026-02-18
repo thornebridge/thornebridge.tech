@@ -1,15 +1,20 @@
+import BridgeLogo from "./BridgeLogo";
+
 export default function App() {
   return (
     <div className="min-h-svh bg-[#e8e5e0] p-3 md:p-5">
       <div className="relative mx-auto flex min-h-[calc(100svh-24px)] max-w-[1440px] flex-col overflow-hidden rounded-[2rem] bg-[#faf9f7] shadow-[inset_0_2px_12px_rgba(0,0,0,0.08),inset_0_1px_3px_rgba(0,0,0,0.06)] md:min-h-[calc(100svh-40px)]">
         {/* Header */}
         <header className="animate-reveal relative z-10 flex items-center justify-between px-8 py-6 md:px-12 md:py-8">
-          <span className="font-serif text-lg font-medium tracking-[0.04em] text-stone-800 md:text-xl">
-            Thornebridge
-          </span>
+          <div className="flex items-center gap-2.5">
+            <BridgeLogo className="h-5 w-auto text-stone-700 md:h-6" />
+            <span className="font-serif text-xl font-medium tracking-[0.04em] text-stone-800 md:text-2xl">
+              Thornebridge
+            </span>
+          </div>
           <a
             href="mailto:projects@thornebridge.tech"
-            className="rounded-full border border-stone-300 px-5 py-2.5 font-serif text-[11px] tracking-[0.15em] text-stone-500 uppercase transition-all duration-500 hover:border-brand hover:bg-brand hover:text-white"
+            className="rounded-full border border-stone-300 px-5 py-2.5 font-serif text-[11px] tracking-[0.15em] text-stone-600 uppercase transition-all duration-500 hover:border-brand hover:bg-brand hover:text-white"
           >
             Contact Us
           </a>
@@ -35,7 +40,7 @@ export default function App() {
               </h1>
             </div>
             <p
-              className="animate-reveal max-w-xs font-serif text-base leading-relaxed text-stone-400 lg:mt-28 lg:text-[17px]"
+              className="animate-reveal max-w-xs font-serif text-base leading-relaxed text-stone-500 lg:mt-28 lg:text-[17px]"
               style={{ animationDelay: "0.7s" }}
             >
               Bespoke software infrastructure for institutional finance, private
