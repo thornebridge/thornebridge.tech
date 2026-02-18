@@ -1,7 +1,7 @@
 export default function App() {
   return (
     <div className="min-h-svh bg-[#e8e5e0] p-3 md:p-5">
-      <div className="relative mx-auto flex min-h-[calc(100svh-24px)] max-w-[1440px] flex-col overflow-hidden rounded-[2rem] bg-[#faf9f7] md:min-h-[calc(100svh-40px)]">
+      <div className="relative mx-auto flex min-h-[calc(100svh-24px)] max-w-[1440px] flex-col overflow-hidden rounded-[2rem] bg-[#faf9f7] shadow-[inset_0_2px_12px_rgba(0,0,0,0.08),inset_0_1px_3px_rgba(0,0,0,0.06)] md:min-h-[calc(100svh-40px)]">
         {/* Header */}
         <header className="animate-reveal relative z-10 flex items-center justify-between px-8 py-6 md:px-12 md:py-8">
           <span className="font-serif text-lg font-medium tracking-[0.04em] text-stone-800 md:text-xl">
@@ -46,7 +46,7 @@ export default function App() {
 
         {/* Bridge watermark */}
         <div
-          className="pointer-events-none absolute bottom-0 left-1/2 w-full max-w-3xl -translate-x-1/2 opacity-[0.03]"
+          className="pointer-events-none absolute bottom-0 right-0 w-full max-w-3xl opacity-[0.05]"
           style={{
             maskImage:
               "linear-gradient(to bottom, transparent 0%, black 25%, black 70%, transparent 100%)",
