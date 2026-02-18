@@ -46,9 +46,8 @@ export default function App() {
 
         {/* Bridge watermark */}
         <div
-          className="animate-reveal pointer-events-none absolute bottom-0 left-1/2 w-full max-w-3xl -translate-x-1/2 opacity-[0.03]"
+          className="pointer-events-none absolute bottom-0 left-1/2 w-full max-w-3xl -translate-x-1/2 opacity-[0.03]"
           style={{
-            animationDelay: "0.5s",
             maskImage:
               "linear-gradient(to bottom, transparent 0%, black 25%, black 70%, transparent 100%)",
             WebkitMaskImage:
