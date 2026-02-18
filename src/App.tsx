@@ -4,13 +4,11 @@ export default function App() {
       <div className="relative mx-auto flex min-h-[calc(100svh-24px)] max-w-[1440px] flex-col overflow-hidden rounded-[2rem] bg-[#faf9f7] md:min-h-[calc(100svh-40px)]">
         {/* Header */}
         <header className="animate-reveal relative z-10 flex items-center justify-between px-8 py-6 md:px-12 md:py-8">
-          <img
-            src="/logo.png"
-            alt="Thornebridge Holdings Co."
-            className="h-10 rounded-lg md:h-12"
-          />
+          <span className="text-lg font-medium tracking-[0.04em] text-stone-800 md:text-xl">
+            Thornebridge
+          </span>
           <a
-            href="mailto:inquiries@thornebridge.tech"
+            href="mailto:projects@thornebridge.tech"
             className="rounded-full border border-stone-300 px-5 py-2.5 font-serif text-[11px] tracking-[0.15em] text-stone-500 uppercase transition-all duration-500 hover:border-brand hover:bg-brand hover:text-white"
           >
             Contact Us
@@ -28,7 +26,7 @@ export default function App() {
                 Est. 2025
               </span>
               <h1
-                className="animate-reveal mt-8 max-w-2xl font-serif text-[clamp(2.5rem,6vw,5rem)] font-light leading-[1.08] tracking-tight text-stone-900"
+                className="animate-reveal mt-8 max-w-2xl font-serif text-[clamp(2.5rem,6vw,5rem)] font-semibold leading-[1.08] tracking-tight text-stone-900"
                 style={{ animationDelay: "0.4s" }}
               >
                 Engineered
@@ -48,7 +46,7 @@ export default function App() {
 
         {/* Bridge watermark */}
         <div
-          className="animate-reveal pointer-events-none absolute bottom-0 left-1/2 w-full max-w-3xl -translate-x-1/2 opacity-[0.045]"
+          className="animate-reveal pointer-events-none absolute bottom-0 left-1/2 w-full max-w-3xl -translate-x-1/2 opacity-[0.02]"
           style={{
             animationDelay: "0.5s",
             maskImage:
