@@ -12,7 +12,7 @@ export default function RootLayout() {
   return (
     <>
       <ScrollToTop />
-      <div className="relative mx-auto flex min-h-svh max-w-[1440px] flex-col overflow-hidden bg-[#faf9f7]">
+      <div className="relative mx-auto flex min-h-svh max-w-[1440px] flex-col overflow-hidden bg-[#faf9f7] shadow-[inset_0_2px_12px_rgba(0,0,0,0.08),inset_0_1px_3px_rgba(0,0,0,0.06)]">
         {/* Header */}
         <header className="animate-reveal relative z-10 flex items-center justify-between px-8 py-6 md:px-12 md:py-8">
           <Link
