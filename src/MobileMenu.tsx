@@ -36,13 +36,6 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
       {/* Nav links */}
       <nav className="flex flex-1 flex-col items-center justify-center gap-10">
         <a
-          href="#careers"
-          onClick={onClose}
-          className="font-serif text-2xl tracking-wide text-stone-800 transition-colors duration-300 hover:text-brand"
-        >
-          Careers
-        </a>
-        <a
           href="https://github.com/thornebridge"
           target="_blank"
           rel="noopener noreferrer"

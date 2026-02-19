@@ -23,12 +23,6 @@ export default function App() {
           {/* Desktop nav */}
           <div className="hidden items-center gap-4 md:flex">
             <a
-              href="#careers"
-              className="font-serif text-[11px] tracking-[0.15em] text-stone-500 uppercase transition-colors duration-500 hover:text-stone-800"
-            >
-              Careers
-            </a>
-            <a
               href="https://github.com/thornebridge"
               target="_blank"
               rel="noopener noreferrer"
