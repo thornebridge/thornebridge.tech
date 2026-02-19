@@ -1,5 +1,4 @@
 import { useState } from "react";
-import BridgeLogo from "./BridgeLogo";
 import CareersSection from "./CareersSection";
 import MobileMenu from "./MobileMenu";
 import { useKonamiCode } from "./useKonamiCode";
@@ -13,12 +12,9 @@ export default function App() {
       <div className="relative mx-auto flex min-h-[calc(100svh-24px)] max-w-[1440px] flex-col overflow-hidden rounded-[2rem] bg-[#faf9f7] shadow-[inset_0_2px_12px_rgba(0,0,0,0.08),inset_0_1px_3px_rgba(0,0,0,0.06)] md:min-h-[calc(100svh-40px)]">
         {/* Header */}
         <header className="animate-reveal relative z-10 flex items-center justify-between px-8 py-6 md:px-12 md:py-8">
-          <div className="flex items-center gap-2.5">
-            <BridgeLogo className="h-5 w-auto text-stone-700 md:h-6" />
-            <span className="font-serif text-xl font-medium tracking-[0.04em] text-stone-800 md:text-2xl">
-              Thornebridge
-            </span>
-          </div>
+          <span className="font-serif text-xl font-medium tracking-[0.04em] text-stone-800 md:text-2xl">
+            Thornebridge
+          </span>
 
           {/* Desktop nav */}
           <div className="hidden items-center gap-4 md:flex">
