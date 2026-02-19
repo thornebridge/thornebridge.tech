@@ -23,7 +23,7 @@ export default function HomePage() {
             </h1>
           </div>
           <p
-            className="animate-reveal max-w-xs font-serif text-base leading-relaxed text-stone-500 lg:mt-28 lg:text-[17px]"
+            className="animate-reveal max-w-xs font-serif text-base leading-relaxed text-stone-600 lg:mt-28 lg:text-[17px]"
             style={{ animationDelay: "0.7s" }}
           >
             Bespoke software infrastructure for institutional finance, private

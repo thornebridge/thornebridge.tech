@@ -20,7 +20,7 @@ export default function ProjectsPage() {
             What We Build
           </h1>
           <p
-            className="animate-reveal mt-6 max-w-lg font-serif text-base leading-relaxed text-stone-500 lg:text-[17px]"
+            className="animate-reveal mt-6 max-w-lg font-serif text-base leading-relaxed text-stone-600 lg:text-[17px]"
             style={{ animationDelay: "0.5s" }}
           >
             Institutional-grade systems engineered for the firms that move

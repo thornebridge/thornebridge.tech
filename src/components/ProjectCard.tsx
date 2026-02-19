@@ -4,7 +4,7 @@ import TechBadge from "./TechBadge";
 function Placeholder({ ratio, label, icon }: { ratio: string; label: string; icon: React.ReactNode }) {
   return (
     <div
-      className={`flex ${ratio} items-center justify-center rounded-xl border border-stone-200 bg-stone-50`}
+      className={`flex ${ratio} items-center justify-center rounded-xl border border-stone-200 bg-stone-100/60`}
     >
       <div className="flex flex-col items-center gap-2 text-stone-300">
         {icon}
@@ -55,10 +55,10 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
     <div className="flex flex-col gap-6 lg:gap-8">
       {/* Vision */}
       <div>
-        <h3 className="font-serif text-sm font-medium tracking-[0.1em] text-stone-400 uppercase">
+        <h3 className="font-serif text-sm font-medium tracking-[0.1em] text-stone-500 uppercase">
           Vision
         </h3>
-        <p className="mt-2 font-serif text-[15px] leading-relaxed text-stone-600 sm:mt-3 sm:text-base">
+        <p className="mt-2 font-serif text-[15px] leading-relaxed text-stone-700 sm:mt-3 sm:text-base">
           {project.description}
         </p>
       </div>
@@ -66,7 +66,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       {/* Tech Stack */}
       {!isPartnership && project.techStack.length > 0 && (
         <div>
-          <h3 className="font-serif text-sm font-medium tracking-[0.1em] text-stone-400 uppercase">
+          <h3 className="font-serif text-sm font-medium tracking-[0.1em] text-stone-500 uppercase">
             Tech Stack
           </h3>
           <div className="mt-2 flex flex-wrap gap-1.5 sm:mt-3 sm:gap-2">
@@ -79,14 +79,14 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
       {/* Problems Solved */}
       <div>
-        <h3 className="font-serif text-sm font-medium tracking-[0.1em] text-stone-400 uppercase">
+        <h3 className="font-serif text-sm font-medium tracking-[0.1em] text-stone-500 uppercase">
           Problems Solved
         </h3>
         <ul className="mt-2 space-y-2 sm:mt-3">
           {project.problemsSolved.map((problem) => (
             <li
               key={problem}
-              className="flex gap-2 font-serif text-[15px] leading-relaxed text-stone-600 sm:text-base"
+              className="flex gap-2 font-serif text-[15px] leading-relaxed text-stone-700 sm:text-base"
             >
               <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-brand/40" />
               {problem}
@@ -97,14 +97,14 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
       {/* Future Goals */}
       <div>
-        <h3 className="font-serif text-sm font-medium tracking-[0.1em] text-stone-400 uppercase">
+        <h3 className="font-serif text-sm font-medium tracking-[0.1em] text-stone-500 uppercase">
           Future Goals
         </h3>
         <ul className="mt-2 space-y-2 sm:mt-3">
           {project.futureGoals.map((goal) => (
             <li
               key={goal}
-              className="flex gap-2 font-serif text-[15px] leading-relaxed text-stone-600 sm:text-base"
+              className="flex gap-2 font-serif text-[15px] leading-relaxed text-stone-700 sm:text-base"
             >
               <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-stone-300" />
               {goal}
@@ -156,7 +156,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       <h2 className="font-serif text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-tight tracking-tight text-stone-900">
         {project.name}
       </h2>
-      <p className="mt-1.5 font-serif text-base text-stone-500 sm:mt-2 sm:text-lg">
+      <p className="mt-1.5 font-serif text-base text-stone-600 sm:mt-2 sm:text-lg">
         {project.tagline}
       </p>
 

@@ -53,11 +53,11 @@ export default function CareersSection() {
                 <span className="font-serif text-base font-medium text-stone-800 transition-colors duration-300 group-hover:text-brand md:text-lg">
                   {pos.title}
                 </span>
-                <span className="hidden font-serif text-xs tracking-wide text-stone-400 sm:inline">
+                <span className="hidden font-serif text-xs tracking-wide text-stone-500 sm:inline">
                   {pos.department}
                 </span>
               </div>
-              <span className="font-serif text-sm text-stone-400 transition-colors duration-300 group-hover:text-brand">
+              <span className="font-serif text-sm text-stone-500 transition-colors duration-300 group-hover:text-brand">
                 Apply &rarr;
               </span>
             </a>
