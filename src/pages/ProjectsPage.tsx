@@ -23,8 +23,8 @@ export default function ProjectsPage() {
             className="animate-reveal mt-6 max-w-lg font-serif text-base leading-relaxed text-stone-600 lg:text-[17px]"
             style={{ animationDelay: "0.5s" }}
           >
-            Infrastructure for lending, underwriting, and the firms that move
-            capital — built to outlast the cycle.
+            We don't build tools. We replace entire categories of software
+            that the industry settled for.
           </p>
         </div>
 
