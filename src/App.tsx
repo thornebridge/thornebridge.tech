@@ -1,6 +1,13 @@
+import { useState } from "react";
 import BridgeLogo from "./BridgeLogo";
+import CareersSection from "./CareersSection";
+import MobileMenu from "./MobileMenu";
+import { useKonamiCode } from "./useKonamiCode";
 
 export default function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const { konamiActive, toastVisible } = useKonamiCode();
+
   return (
     <div className="min-h-svh bg-[#e8e5e0] p-3 md:p-5">
       <div className="relative mx-auto flex min-h-[calc(100svh-24px)] max-w-[1440px] flex-col overflow-hidden rounded-[2rem] bg-[#faf9f7] shadow-[inset_0_2px_12px_rgba(0,0,0,0.08),inset_0_1px_3px_rgba(0,0,0,0.06)] md:min-h-[calc(100svh-40px)]">
@@ -12,7 +19,15 @@ export default function App() {
               Thornebridge
             </span>
           </div>
-          <div className="flex items-center gap-4">
+
+          {/* Desktop nav */}
+          <div className="hidden items-center gap-4 md:flex">
+            <a
+              href="#careers"
+              className="font-serif text-[11px] tracking-[0.15em] text-stone-500 uppercase transition-colors duration-500 hover:text-stone-800"
+            >
+              Careers
+            </a>
             <a
               href="https://github.com/thornebridge"
               target="_blank"
@@ -25,12 +40,28 @@ export default function App() {
             </a>
             <a
               href="mailto:projects@thornebridge.tech"
-              className="rounded-full border border-stone-300 px-5 py-2.5 font-serif text-[11px] tracking-[0.15em] text-stone-600 uppercase transition-all duration-500 hover:border-brand hover:bg-brand hover:text-white"
+              className="rounded-full border border-stone-300 px-5 py-2.5 font-serif text-[11px] tracking-[0.15em] text-stone-600 uppercase transition-all duration-500 hover:border-brand hover:bg-brand/10 hover:text-brand"
             >
               Contact Us
             </a>
           </div>
+
+          {/* Mobile hamburger */}
+          <button
+            onClick={() => setMenuOpen(true)}
+            className="text-stone-600 md:hidden"
+            aria-label="Open menu"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-6 w-6">
+              <line x1="4" y1="7" x2="20" y2="7" />
+              <line x1="4" y1="12" x2="20" y2="12" />
+              <line x1="4" y1="17" x2="20" y2="17" />
+            </svg>
+          </button>
         </header>
+
+        {/* Mobile menu overlay */}
+        <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
 
         {/* Hero */}
         <main className="relative z-10 flex flex-1 flex-col justify-center px-8 pb-24 md:px-12">
@@ -61,10 +92,14 @@ export default function App() {
           </div>
         </main>
 
+        {/* Careers */}
+        <CareersSection />
+
         {/* Bridge watermark */}
         <div
-          className="pointer-events-none absolute bottom-0 right-0 w-full max-w-3xl opacity-[0.05]"
+          className="pointer-events-none absolute bottom-0 right-0 w-full max-w-3xl transition-opacity duration-[2000ms]"
           style={{
+            opacity: konamiActive ? 0.12 : 0.05,
             maskImage:
               "linear-gradient(to bottom, transparent 0%, black 25%, black 70%, transparent 100%)",
             WebkitMaskImage:
@@ -73,6 +108,13 @@ export default function App() {
         >
           <img src="/bridge.png" alt="" className="w-full" />
         </div>
+
+        {/* Konami toast */}
+        {toastVisible && (
+          <div className="fixed bottom-8 left-1/2 z-50 -translate-x-1/2 rounded-full border border-brand/20 bg-brand/5 px-5 py-2 font-serif text-sm tracking-wide text-brand animate-reveal">
+            The vault is open.
+          </div>
+        )}
 
         {/* Footer */}
         <footer className="relative z-10 px-8 py-6 md:px-12 md:py-8">
