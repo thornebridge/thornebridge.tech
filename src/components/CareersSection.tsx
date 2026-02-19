@@ -31,7 +31,7 @@ function mailtoHref(title: string) {
 
 export default function CareersSection() {
   return (
-    <section id="careers" className="relative z-10 px-8 pb-12 md:px-12">
+    <section id="careers" aria-label="Open positions" className="relative z-10 px-8 pb-12 md:px-12">
       <div className="mx-auto mb-8 h-px w-full max-w-4xl bg-stone-200" />
 
       <div className="mx-auto max-w-4xl">

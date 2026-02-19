@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 interface MobileMenuProps {
   open: boolean;
@@ -18,7 +19,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col bg-[#faf9f7]">
+    <div role="dialog" aria-modal="true" className="fixed inset-0 z-50 flex flex-col bg-[#faf9f7]">
       {/* Close button */}
       <div className="flex justify-end px-8 py-6">
         <button
@@ -34,7 +35,14 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
       </div>
 
       {/* Nav links */}
-      <nav className="flex flex-1 flex-col items-center justify-center gap-10">
+      <nav aria-label="Mobile navigation" className="flex flex-1 flex-col items-center justify-center gap-10">
+        <Link
+          to="/projects"
+          onClick={onClose}
+          className="font-serif text-2xl tracking-wide text-stone-800 transition-colors duration-300 hover:text-brand"
+        >
+          Projects
+        </Link>
         <a
           href="https://github.com/thornebridge"
           target="_blank"

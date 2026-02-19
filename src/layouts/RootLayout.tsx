@@ -1,23 +1,39 @@
 import { useState } from "react";
-import CareersSection from "./CareersSection";
-import MobileMenu from "./MobileMenu";
-import { useKonamiCode } from "./useKonamiCode";
+import { Link, Outlet, useLocation } from "react-router-dom";
+import MobileMenu from "../components/MobileMenu";
+import ScrollToTop from "../components/ScrollToTop";
+import { useKonamiCode } from "../hooks/useKonamiCode";
 
-export default function App() {
+export default function RootLayout() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { konamiActive, toastVisible } = useKonamiCode();
+  const { pathname } = useLocation();
 
   return (
     <div className="min-h-svh bg-[#e8e5e0] p-3 md:p-5">
+      <ScrollToTop />
       <div className="relative mx-auto flex min-h-[calc(100svh-24px)] max-w-[1440px] flex-col overflow-hidden rounded-[2rem] bg-[#faf9f7] shadow-[inset_0_2px_12px_rgba(0,0,0,0.08),inset_0_1px_3px_rgba(0,0,0,0.06)] md:min-h-[calc(100svh-40px)]">
         {/* Header */}
         <header className="animate-reveal relative z-10 flex items-center justify-between px-8 py-6 md:px-12 md:py-8">
-          <span className="font-serif text-xl font-medium tracking-[0.04em] text-stone-800 md:text-2xl">
+          <Link
+            to="/"
+            className="font-serif text-xl font-medium tracking-[0.04em] text-stone-800 md:text-2xl"
+          >
             Thornebridge
-          </span>
+          </Link>
 
           {/* Desktop nav */}
-          <div className="hidden items-center gap-4 md:flex">
+          <nav aria-label="Main" className="hidden items-center gap-4 md:flex">
+            <Link
+              to="/projects"
+              className={`rounded-full border px-5 py-2.5 font-serif text-[11px] tracking-[0.15em] uppercase transition-all duration-500 ${
+                pathname === "/projects"
+                  ? "border-brand bg-brand/10 text-brand"
+                  : "border-transparent text-stone-500 hover:text-stone-800"
+              }`}
+            >
+              Projects
+            </Link>
             <a
               href="https://github.com/thornebridge"
               target="_blank"
@@ -34,7 +50,7 @@ export default function App() {
             >
               Contact Us
             </a>
-          </div>
+          </nav>
 
           {/* Mobile hamburger */}
           <button
@@ -53,37 +69,8 @@ export default function App() {
         {/* Mobile menu overlay */}
         <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
 
-        {/* Hero */}
-        <main className="relative z-10 flex flex-1 flex-col justify-center px-8 pb-24 md:px-12">
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
-            <div>
-              <span
-                className="animate-reveal inline-block rounded-full border border-brand/20 bg-brand/5 px-4 py-1.5 font-serif text-[11px] tracking-[0.15em] text-brand uppercase"
-                style={{ animationDelay: "0.2s" }}
-              >
-                Est. 2025
-              </span>
-              <h1
-                className="animate-reveal mt-8 max-w-2xl font-serif text-[clamp(2.5rem,6vw,5rem)] font-semibold leading-[1.08] tracking-tight text-stone-900"
-                style={{ animationDelay: "0.4s" }}
-              >
-                Engineered
-                <br />
-                for Permanence
-              </h1>
-            </div>
-            <p
-              className="animate-reveal max-w-xs font-serif text-base leading-relaxed text-stone-500 lg:mt-28 lg:text-[17px]"
-              style={{ animationDelay: "0.7s" }}
-            >
-              Bespoke software infrastructure for institutional finance, private
-              capital, and the firms that move markets.
-            </p>
-          </div>
-        </main>
-
-        {/* Careers */}
-        <CareersSection />
+        {/* Page content */}
+        <Outlet />
 
         {/* Bridge watermark */}
         <div
@@ -96,7 +83,7 @@ export default function App() {
               "linear-gradient(to bottom, transparent 0%, black 25%, black 70%, transparent 100%)",
           }}
         >
-          <img src="/bridge.png" alt="" className="w-full" />
+          <img src="/bridge.png" alt="" role="presentation" className="w-full" />
         </div>
 
         {/* Konami toast */}
