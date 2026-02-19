@@ -17,14 +17,14 @@ export default function ProjectsPage() {
             className="animate-reveal mt-8 max-w-2xl font-serif text-[clamp(2.5rem,6vw,5rem)] font-semibold leading-[1.08] tracking-tight text-stone-900"
             style={{ animationDelay: "0.3s" }}
           >
-            What We Build
+            The Work
           </h1>
           <p
             className="animate-reveal mt-6 max-w-lg font-serif text-base leading-relaxed text-stone-600 lg:text-[17px]"
             style={{ animationDelay: "0.5s" }}
           >
-            Institutional-grade systems engineered for the firms that move
-            capital.
+            Infrastructure for lending, underwriting, and the firms that move
+            capital — built to outlast the cycle.
           </p>
         </div>
 

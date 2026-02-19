@@ -1,34 +1,19 @@
 import type { Project } from "../data/projects";
 import TechBadge from "./TechBadge";
 
-function Placeholder({ ratio, label, icon }: { ratio: string; label: string; icon: React.ReactNode }) {
-  return (
-    <div
-      className={`flex ${ratio} items-center justify-center rounded-xl border border-stone-200 bg-stone-100/60`}
-    >
-      <div className="flex flex-col items-center gap-2 text-stone-300">
-        {icon}
-        <span className="font-serif text-[11px] tracking-[0.1em] uppercase">
-          {label}
-        </span>
-      </div>
-    </div>
-  );
-}
-
-const logoIcon = (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="h-8 w-8">
-    <rect x="3" y="3" width="18" height="18" rx="3" />
-    <circle cx="12" cy="12" r="4" />
-  </svg>
-);
-
 const previewIcon = (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="h-8 w-8">
     <rect x="2" y="4" width="20" height="16" rx="2" />
     <line x1="2" y1="8" x2="22" y2="8" />
     <circle cx="6" cy="6" r="0.5" fill="currentColor" />
     <circle cx="9" cy="6" r="0.5" fill="currentColor" />
+  </svg>
+);
+
+const logoIcon = (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="h-5 w-5">
+    <rect x="3" y="3" width="18" height="18" rx="3" />
+    <circle cx="12" cy="12" r="4" />
   </svg>
 );
 
@@ -42,12 +27,12 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
   const isEven = index % 2 === 0;
   const isPartnership = project.type === "partnership";
 
-  const visuals = (
-    <div className="flex flex-col gap-4">
-      <Placeholder ratio="aspect-[3/2]" label="Logo" icon={logoIcon} />
-      {!isPartnership && (
-        <Placeholder ratio="aspect-video" label="Preview" icon={previewIcon} />
-      )}
+  const preview = !isPartnership && (
+    <div className="flex aspect-video items-center justify-center rounded-xl border border-stone-200 bg-stone-100/60">
+      <div className="flex flex-col items-center gap-2 text-stone-300">
+        {previewIcon}
+        <span className="font-serif text-[11px] tracking-[0.1em] uppercase">Preview</span>
+      </div>
     </div>
   );
 
@@ -152,19 +137,33 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         </span>
       </div>
 
-      {/* Name + tagline */}
-      <h2 className="font-serif text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-tight tracking-tight text-stone-900">
-        {project.name}
-      </h2>
-      <p className="mt-1.5 font-serif text-base text-stone-600 sm:mt-2 sm:text-lg">
-        {project.tagline}
-      </p>
-
-      {/* Two-column layout — mobile: single col, visuals first; desktop: alternating sides */}
-      <div className="mt-8 grid gap-8 lg:mt-10 lg:grid-cols-2 lg:gap-16">
-        <div className={!isEven ? "lg:order-2" : ""}>{visuals}</div>
-        <div className={!isEven ? "lg:order-1" : ""}>{content}</div>
+      {/* Logo + Name + Tagline */}
+      <div className="flex items-start gap-4">
+        {/* Small rounded-square logo */}
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-stone-200 bg-stone-100/60 sm:h-14 sm:w-14">
+          <span className="text-stone-300">{logoIcon}</span>
+        </div>
+        <div className="min-w-0">
+          <h2 className="font-serif text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-tight tracking-tight text-stone-900">
+            {project.name}
+          </h2>
+          <p className="mt-1 font-serif text-base text-stone-600 sm:text-lg">
+            {project.tagline}
+          </p>
+        </div>
       </div>
+
+      {/* Two-column layout — mobile: single col; desktop: alternating sides */}
+      {!isPartnership ? (
+        <div className="mt-8 grid gap-8 lg:mt-10 lg:grid-cols-2 lg:gap-16">
+          <div className={!isEven ? "lg:order-2" : ""}>{preview}</div>
+          <div className={!isEven ? "lg:order-1" : ""}>{content}</div>
+        </div>
+      ) : (
+        <div className="mt-8 lg:mt-10">
+          {content}
+        </div>
+      )}
     </section>
   );
 }
